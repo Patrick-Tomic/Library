@@ -1,4 +1,4 @@
-function book(name, author, pageCount, read){
+ function book(name, author, pageCount, read){
     this.name = name
     this.author= author
     this.pageNum = pageCount
@@ -9,27 +9,20 @@ book.prototype.info = function(){
 }
 
 const lotr = new book("lotr","J.r.r Tolkien",10000,'True');
-lotr.info()
-
-
-const body = document.querySelector('body');
-const table = document.querySelector("#table");
-const newBook = document.querySelector("#newBook");
-function CreateBook(){
-    let book = [];
-    const inputs =document.createElement("div");
-    inputs.setAttribute("id",'inputs');
-    inputs.setAttribute('border','solid 2px black');
-    const form = document.createElement('form');
-    const title = document.createElement("input");
-    title.setAttribute('type','text');
-    title.setAttribute('name','title');
-    title.setAttribute('id','title');
-    const titleLabel = document.createElement('label');
-    titleLabel.setAttribute('for','title');
-    titleLabel.innerHTML='Title';
-    form.appendChild(titleLabel);
-    form.appendChild(title);
-    inputs.append(form);
-    body.append(inputs);
-};
+lotr.info();   
+    
+    const bookForm = document.getElementById("bookForm");
+    bookForm.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const error = document.getElementById("error");
+        const title = document.getElementById('bookTitle');
+        const author = document.getElementById('authorName');
+        const pageCount = document.getElementById('pageCount');
+        const isRead = document.getElementById('isRead');
+        if(title.value===""||author.value===""||pageCount.value===""){
+            error.innerHTML="Please fill in the content";
+        }
+       title.value ="";
+       author.value = ""
+        pageCount.value = "";
+    });

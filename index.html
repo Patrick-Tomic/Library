@@ -7,25 +7,41 @@
     <title>Library</title>
 </head>
 <body>
-    <script src="script.js"></script>
-    <div class="wrap">
-        <div class="header">
-            <h2 class=head>Library</h2>
-            <p>“My alma mater was books, a good library…<br> I could spend the rest of my life reading,<br> just satisfying my curiosity.” ― Malcolm X</p>
+   
+    <div id="gridWrapper">
+        <div id="formColumn">
+           <form action="" id="bookForm">
+                <p>Book Title:</p>
+                <input type="text" id="bookTitle">
+                <br>
+                
+                <p>Author name:</p>
+                <input type="text"  id="authorName">
+                <br>
+                
+                <p>Page Count:</p>
+                <input type="number" id="pageCount">
+                <br>
+                
+                <p>Read?</p>
+                <input type="checkbox" id="isRead">
+                <button type="submit">Submit</button>
+                
+                </form>
+                
         </div>
-            <div id="table">
+        
+        <div id="table">
             <table>
-                <tr>
+                <tr class="tableHeader">
                     <th>Title</th>
                     <th>Author</th>
-                    <th>Page Count</th>
-                    <th>Read completly</th>
+                    <th>Page #</th>
+                    <th>Read</th>
                 </tr>
-
             </table>
-            </div>
-           
-          <button id="newBook" onclick="CreateBook()">New Book</button>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

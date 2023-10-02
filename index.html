@@ -10,23 +10,50 @@
    
     <div id="gridWrapper">
         <div id="formColumn">
+
+           <div id="logo">
+                <svg class="logo" width="148" height="111" viewBox="0 0 148 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="62" width="148" height="17" fill="#613104"/>
+                    <rect x="73.5677" width="61.3596" height="19.5691" transform="rotate(89.3134 73.5677 0)" fill="#BA9820"/>
+                    <rect x="74" y="31" width="12" height="31" fill="#9F0909"/>
+                    <rect x="24" y="79" width="16" height="32" fill="#360707"/>
+                    <rect x="24" y="79" width="16" height="32" fill="#360707"/>
+                    <rect x="107" y="79" width="16" height="32" fill="#360707"/>
+                    <rect x="107" y="79" width="16" height="32" fill="#360707"/>
+                    <rect x="32" y="11" width="23" height="51" fill="#298C3F"/>
+                    <rect x="86" y="17" width="18" height="44" fill="#FF6359"/>
+                    <rect x="53" y="11" width="21" height="6" fill="#110F75"/>
+                    <rect x="55" y="43" width="21" height="6" fill="#110F75"/>
+                    <rect x="86" y="23" width="18" height="8" fill="#08B576"/>
+                    <rect x="86" y="49" width="18" height="8" fill="#08B576"/>
+                    <rect x="32" y="19" width="23" height="8" fill="#E6CF01"/>
+                    <rect x="32" y="46" width="23" height="8" fill="#E6CF01"/>
+                    </svg>
+                <h2>Library</h2>                    
+           </div>
+
            <form action="" id="bookForm">
-                <p>Book Title:</p>
-                <input type="text" id="bookTitle">
-                <br>
+            <div class="input">
+            <label for="title">Book Title:</label>
+                <input type="text"  name="title" id="bookTitle">
+            </div>
                 
-                <p>Author name:</p>
-                <input type="text"  id="authorName">
-                <br>
+                <div class="input">
+               <label for="author">Author Name:</label>
+                <input type="text" name="author"  id="authorName">
+                </div>
                 
-                <p>Page Count:</p>
-                <input type="number" id="pageCount">
-                <br>
+                <div class="input">
+                <label for="page">Page Count:</label>
+                <input type="number" name="page" id="pageCount">
+                </div>
+               
                 
-                <p>Read?</p>
-                <input type="checkbox" checked="checked" id="isRead">
-                <button type="submit">Submit</button>
-                
+             <div class="input">
+               <input type="checkbox" name="check" checked="check ed" id="isRead">
+               <label for="check">Have you finished reading this book?</label>
+               <br> <button type="submit">Submit</button>
+             </div>
                 </form>
                 
         </div>
@@ -38,7 +65,7 @@
                     <th>Author</th>
                     <th>Page #</th>
                     <th>Read</th>
-                    <th>Delete</th>
+                    <th>Options</th>
                 </tr>
             </table>
         </div>

@@ -13,24 +13,43 @@ lotr.info();
 
     const bookForm = document.getElementById("bookForm");
     bookForm.addEventListener('submit',(e)=>{
-         e.preventDefault();  
+      e.preventDefault(); 
+        const form= document.querySelector('form');
         const title = document.getElementById('bookTitle');
         const author = document.getElementById('authorName');
         const pageCount = document.getElementById('pageCount');
         const isRead = document.getElementById('isRead');
+        const errTitle = document.querySelector('.title');
+        const errName = document.querySelector('.author');
+        const errNumber = document.querySelector('.number');
        let bool =isRead.checked;
-
-
-
-          const obj = new book(title.value,author.value,pageCount.value,bool);
+       if(title.value ===""){
+        errTitle.style.display = 'block';
+       } else{
+        errTitle.style.display='none';
+       }
+       if(author.value===''){
+        errName.style.display='block';
+       }
+       else{
+        errName.style.display='none';
+       }
+       if(pageCount.value===''||pageCount.value==0){
+        errNumber.style.display= 'block';
+       }
+       else{
+        errNumber.style.display = 'none';
+       }
+       if(title.value!='' && author.value!=""&&pageCount.value!=""){
+        const obj = new book(title.value,author.value,pageCount.value,bool);
           bookArray.push(obj);
         addNewBook(obj);
-       title.value ="";
-       author.value = "";
-        pageCount.value = "";
+        form.reset();
+       }
 
       
     });
+  bookForm.unbind('submit');
     const button = document.createElement('button');
     button.innerHTML = "delete";
     button.setAttribute('style','width:8vw;height:5vh;color:white;background-color:#007FFF;padding:8px;');

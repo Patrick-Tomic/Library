@@ -67,3 +67,18 @@ th{
     
     
 }
+.title{
+    display:none
+}
+.author{
+    display: none;
+}
+.number{
+    display:none;
+}
+.input p{
+    background:#FF7F50;
+    color:#012169;
+    font-size: 12px;
+   
+}
